@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles globaux pour le confort mobile */
+body {
+  background-color: #f8fafc; /* slate-50 */
+  overscroll-behavior-y: none; /* Empêche le rebond élastique sur mobile */
+}
