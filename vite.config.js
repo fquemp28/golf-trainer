@@ -4,25 +4,22 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // REMPLACEZ 'golf-training-app' PAR LE NOM EXACT DE VOTRE REPO GITHUB
-  // Exemple: si votre repo est https://github.com/Fred/mon-golf, mettez base: '/mon-golf/'
   base: '/golf-trainer/', 
-  
   plugins: [
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      // J'ai retiré les fichiers audio locaux de la pré-cache car vous utilisez maintenant des liens CDN
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg', 'audio/*.mp3'],
       manifest: {
-        name: 'Golf Training Companion',
-        short_name: 'Golf Coach',
-        description: 'Votre compagnon d\'entraînement de golf intelligent',
+        name: 'Golf Trainer',
+        short_name: 'Golf Trainer',
+        description: 'Mon coach d\'entraînement de golf',
         theme_color: '#059669',
         background_color: '#ffffff',
         display: 'standalone',
         orientation: 'portrait',
-        start_url: '.', // Important pour supporter le chemin relatif du sous-dossier
+        scope: '/golf-trainer/',
+        start_url: '/golf-trainer/', 
         icons: [
           {
             src: 'pwa-192x192.png',

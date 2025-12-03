@@ -1857,7 +1857,7 @@ const generateDailySession = () => {
     ...s, 
     id: `session-step-${i}`,
     drillId: s.id,
-    audioSrc: s.audioFile ? (s.audioFile.startsWith('http') ? s.audioFile : `/audio/${s.audioFile}`) : `/audio/${s.id}.mp3`
+    audioSrc: `/audio/${s.id}.mp3`
   }));
 };
 
